@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -145,7 +146,8 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height * 0.65,
+      padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.blueGrey[900]!, Colors.purple[900]!],
@@ -157,12 +159,29 @@ class HeroSection extends StatelessWidget {
         opacity: fadeAnimation,
         child: Center(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 80,
-                backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 100, color: Colors.blueGrey),
+              ClipOval(
+                child: CachedNetworkImage(
+                  imageUrl:
+                      'https://media.licdn.com/dms/image/v2/D4D03AQHcj3-pYe8jfQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704906484079?e=1759968000&v=beta&t=KeIWZcP9x1YGs5DciA3OnCunpkasGppQCjgJ1yEwr50',
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.cover,
+
+                  // Enquanto carrega
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+
+                  // Se der erro (tipo link quebrado)
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                    size: 40,
+                    color: Colors.red,
+                  ),
+                ),
               ),
               const SizedBox(height: 24),
               Text(
@@ -301,7 +320,7 @@ class ProjetosSection extends StatelessWidget {
             'Cadastros Vendas (Comanda/Mesa, Checkout,PDV), Pagamento Pix',
         'link': '',
       },
-         {
+      {
         'nome': 'Automação Comercial Balança',
         'descricao':
             'Automatização de pesagem, interação impressoras, Auto Atendimento, Desktop/Mobile',
@@ -383,12 +402,14 @@ class _ProjectCardState extends State<ProjectCard> {
         ),
         transform: Matrix4.identity()..scale(_isHovered ? 1.05 : 1.0),
         child: GestureDetector(
-          onTap:widget.link!=''? () async {
-            final url = Uri.parse(widget.link);
-            if (await canLaunchUrl(url)) {
-              await launchUrl(url);
-            }
-          }:(){},
+          onTap: widget.link != ''
+              ? () async {
+                  final url = Uri.parse(widget.link);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  }
+                }
+              : () {},
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -406,22 +427,22 @@ class _ProjectCardState extends State<ProjectCard> {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 16),
-              if(widget.link!='')
-              TextButton(
-                onPressed: () async {
-                  final url = Uri.parse(widget.link);
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url);
-                  }
-                },
-                child: Text(
-                  'Ver Projeto',
-                  style: TextStyle(
-                    color: Colors.purple[300],
-                    fontWeight: FontWeight.w600,
+              if (widget.link != '')
+                TextButton(
+                  onPressed: () async {
+                    final url = Uri.parse(widget.link);
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    }
+                  },
+                  child: Text(
+                    'Ver Projeto',
+                    style: TextStyle(
+                      color: Colors.purple[300],
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-              ),
             ],
           ),
         ),
