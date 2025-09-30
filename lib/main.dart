@@ -216,20 +216,20 @@ class _HomePageState extends State<HomePage>
                   ),
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 800),
-                    child: const SobreSection(
-                      key: Key('sobre'),
+                    child: SobreSection(
+                      key: _sobreKey,
                     ),
                   ),
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 1000),
-                    child: const ProjetosSection(
-                      key: Key('projetos'),
+                    child: ProjetosSection(
+                      key: _projetosKey,
                     ),
                   ),
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 800),
-                    child: const ContatoSection(
-                      key: Key('contato'),
+                    child: ContatoSection(
+                      key: _contatoKey,
                     ),
                   ),
                 ],
