@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:html' hide VoidCallback;
+import 'package:web/web.dart' as web;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -92,13 +92,13 @@ class _PortfolioAppState extends State<PortfolioApp> {
   @override
   void initState() {
     super.initState();
-    temaEscuro = window.localStorage['tema'] == 'escuro';
+    temaEscuro = web.window.localStorage.getItem('tema') == 'escuro';
   }
 
   void alternarTema() {
     setState(() {
       temaEscuro = !temaEscuro;
-      window.localStorage['tema'] = temaEscuro ? 'escuro' : 'claro';
+      web.window.localStorage.setItem('tema', temaEscuro ? 'escuro' : 'claro');
     });
   }
 
