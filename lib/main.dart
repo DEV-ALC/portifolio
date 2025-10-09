@@ -286,7 +286,7 @@ class HeroSection extends StatelessWidget {
               ClipOval(
                 child: CachedNetworkImage(
                   imageUrl:
-                      'https://media.licdn.com/dms/image/v2/D4D03AQHcj3-pYe8jfQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704906484079?e=1759968000&v=beta&t=KeIWZcP9x1YGs5DciA3OnCunpkasGppQCjgJ1yEwr50',
+                      'https://avatars.githubusercontent.com/u/209940711?v=4',
                   width: 200,
                   height: 200,
                   fit: BoxFit.cover,
