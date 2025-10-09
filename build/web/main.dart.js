@@ -60780,7 +60780,7 @@ if(s!=null)A.aft(s,0,B.Gi,B.fs,B.zH)
 return null},
 $S:0}
 A.AO.prototype={
-S(a){var s=null,r="https://media.licdn.com/dms/image/v2/D4D03AQHcj3-pYe8jfQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704906484079?e=1759968000&v=beta&t=KeIWZcP9x1YGs5DciA3OnCunpkasGppQCjgJ1yEwr50",q=A.dd(a,s,t.w).w,p=t.t_
+S(a){var s=null,r="https://avatars.githubusercontent.com/u/209940711?v=4",q=A.dd(a,s,t.w).w,p=t.t_
 p=A.al(a).ax.a===B.N?A.b([B.dv,B.fi],p):A.b([B.cr,B.ct],p)
 return A.j1(s,A.a9E(A.acR(A.mX(A.b([new A.zj(new A.pY(new A.iW(s,r,s,1,s,s,s,s,B.Ar),r,new A.Rd(),new A.Re(),200,200,B.wf,s),s),B.I5,A.fa("Alcemir Henrique",A.al(a).p2.a,B.bz),B.v3,A.fa("Desenvolvedor, especializado em Flutter e Integra\xe7\xf5es Comerciais",A.al(a).p2.y,B.bz)],t.E),B.ap,B.p4,B.e1),s,s),this.c),B.z,s,s,new A.eg(s,s,s,s,s,new A.jo(B.vU,B.ia,B.d8,p,s,s),B.b8),s,q.a.b*0.65,s,B.dD,s,s,s)}}
 A.Rd.prototype={
