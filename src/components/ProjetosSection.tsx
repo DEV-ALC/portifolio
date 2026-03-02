@@ -54,6 +54,12 @@ export default function ProjetosSection({ tema }: SectionProps) {
         "Sistema de automação comercial integrado à balança, com suporte a impressoras e autoatendimento.",
       link: "",
     },
+    {
+      nome: "Conversor WebP em Go",
+      descricao:
+        "API escrita em Go para conversão de imagens para WebP, executando em container Docker. Projeto inclui testes de carga com K6 para análise de throughput, latência e estabilidade sob alto volume de requisições.",
+      link: "",
+    },
   ];
 
   return (

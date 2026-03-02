@@ -24,9 +24,9 @@ export default function HeroSection({ tema }: HeroProps) {
         alt="foto de perfil"
       />
       <h1 className="text-5xl font-bold mt-6">Alcemir Henrique</h1>
-      <p className="text-lg mt-4 max-w-2xl">
-        Desenvolvedor especializado em Flutter e Integrações Comerciais
-      </p>
+ <p className="text-lg mt-4 max-w-2xl">
+  Desenvolvedor Fullstack com foco em TypeScript, C# e construção de sistemas robustos.
+</p>
     </section>
   );
 }
